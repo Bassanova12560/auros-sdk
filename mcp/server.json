@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/server.schema.json",
+  "name": "io.github.bassanova12560/auros-protocol",
+  "description": "AUROS Protocol MCP — MiCA readiness, RWA compare, and unfused energy desk briefs (Activity · Promise Gap · Variance) for agents.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/Bassanova12560/auros-sdk",
+    "source": "github"
+  },
+  "version": "1.3.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@adrien1212balitrand/auros-mcp",
+      "version": "1.3.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "AUROS_API_KEY",
+          "description": "Bearer API key from getauros.com/developers (demo: auros_pk_test_demo)",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "AUROS_BASE_URL",
+          "description": "API base URL (default https://getauros.com)",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

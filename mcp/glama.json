@@ -1,0 +1,26 @@
+{
+  "name": "AUROS Protocol",
+  "description": "RWA intelligence for agents — MiCA score, compare, energy desk (Activity · Promise Gap · Variance lab). Indicative only.",
+  "category": "Finance",
+  "homepage": "https://getauros.com/developers/docs/mcp-server",
+  "repository": "https://github.com/Bassanova12560/auros-sdk",
+  "license": "MIT",
+  "environment": [
+    {
+      "name": "AUROS_API_KEY",
+      "description": "Bearer key — free tier at getauros.com/developers",
+      "required": false,
+      "default": "auros_pk_test_demo"
+    },
+    {
+      "name": "AUROS_BASE_URL",
+      "description": "API base URL",
+      "required": false,
+      "default": "https://getauros.com"
+    }
+  ],
+  "run": {
+    "command": "npx",
+    "args": ["-y", "@adrien1212balitrand/auros-mcp@latest"]
+  }
+}

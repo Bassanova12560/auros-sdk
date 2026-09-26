@@ -1,0 +1,40 @@
+# Smithery — https://smithery.ai/docs/config#smitheryyaml
+# Deploy from a public GitHub repo that includes this file (thin auros-sdk or MCP mirror).
+# npm artifact: @adrien1212balitrand/auros-mcp
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    additionalProperties: false
+    properties:
+      aurosApiKey:
+        type: string
+        title: AUROS API key
+        description: >
+          Bearer key from https://getauros.com/developers (free tier).
+          Demo key auros_pk_test_demo works with limited quota.
+      aurosBaseUrl:
+        type: string
+        title: AUROS API base URL
+        description: Override API host (default https://getauros.com).
+        default: https://getauros.com
+  commandFunction: |-
+    (config) => {
+      const env = {};
+      if (config && config.aurosApiKey) {
+        env.AUROS_API_KEY = config.aurosApiKey;
+      } else {
+        env.AUROS_API_KEY = "auros_pk_test_demo";
+      }
+      if (config && config.aurosBaseUrl) {
+        env.AUROS_BASE_URL = config.aurosBaseUrl;
+      }
+      return {
+        command: "npx",
+        args: ["-y", "@adrien1212balitrand/auros-mcp@latest"],
+        env,
+      };
+    }
+  exampleConfig:
+    aurosApiKey: auros_pk_test_demo

@@ -1,0 +1,28 @@
+{
+  "name": "auros-sdk",
+  "private": true,
+  "description": "Public AUROS SDK showcase — install packages from npm",
+  "license": "MIT",
+  "homepage": "https://getauros.com/developers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bassanova12560/auros-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bassanova12560/auros-sdk/issues",
+    "email": "security@getauros.com"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "example:score": "npx --yes tsx examples/score-basic.ts",
+    "example:products": "npx --yes tsx examples/products-browse.ts",
+    "example:jurisdictions": "npx --yes tsx examples/jurisdictions.ts"
+  },
+  "devDependencies": {
+    "@adrien1212balitrand/auros-protocol": "^1.0.10",
+    "tsx": "^4.19.0",
+    "typescript": "^5"
+  }
+}
